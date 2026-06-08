@@ -1,0 +1,15 @@
+const API_BASE_URL = '/api/evaluation-service';
+const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJhMjAyM2NzZTkzNjRAaW1zZWMuYWMuaW4iLCJleHAiOjE3ODA5MDYxOTMsImlhdCI6MTc4MDkwNTI5MywiaXNzIjoiQWZmb3JkIE1lZGljYWwgVGVjaG5vbG9naWVzIFByaXZhdGUgTGltaXRlZCIsImp0aSI6IjBkMmU2MTc1LTdjODctNDc1My05YTJlLWMwZjE5YmVkNjE4MSIsImxvY2FsZSI6ImVuLUlOIiwibmFtZSI6Imxha3NoYXkgc2hhcm1hIiwic3ViIjoiZGY5MjJiMjgtNDNmZi00MTYxLTgwMTgtOWI1NDNjNDhlMjUyIn0sImVtYWlsIjoiYTIwMjNjc2U5MzY0QGltc2VjLmFjLmluIiwibmFtZSI6Imxha3NoYXkgc2hhcm1hIiwicm9sbE5vIjoiMjMwMTQzMDEwMDEyOCIsImFjY2Vzc0NvZGUiOiJueVhRTXUiLCJjbGllbnRJRCI6ImRmOTIyYjI4LTQzZmYtNDE2MS04MDE4LTliNTQzYzQ4ZTI1MiIsImNsaWVudFNlY3JldCI6ImNqeWdWYVBndkFIZnlNUlEifQ.CQ7endwg5NKleCje3u4aI241I7myladrQ1CyG9Hit90';
+
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Authorization': `Bearer ${AUTH_TOKEN}`
+  }
+});
+
+export const getNotifications = () => api.get('/notifications');
+
+export default api;
